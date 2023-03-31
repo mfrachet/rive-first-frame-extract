@@ -1,0 +1,22 @@
+<html>
+  <head>
+    <title>Rive Hello World</title>
+  </head>
+  <body>
+    <canvas id="canvas" width="500" height="500"></canvas>
+
+    <script src="https://unpkg.com/@rive-app/canvas@1.0.102"></script>
+    <script>
+      const r = new rive.Rive({
+        src: "/vehicles.riv",
+        canvas: document.getElementById("canvas"),
+        autoplay: true,
+        stateMachines: "bumpy",
+        onLoad: () => {
+          r.resizeDrawingSurfaceToCanvas();
+          window.RIVE_READY = true;
+        },
+      });
+    </script>
+  </body>
+</html>
